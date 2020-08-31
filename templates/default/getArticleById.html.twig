@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}détail de {{ article.titre }}{% endblock %}
+{% block body %}
+
+    <div class="container formulaire col-6">
+        <div class="rounded">
+            <div class="card darkThemeAlt">
+                <div class="card-header">
+                    <h4 class="text-uppercase text-center">{{ article.titre }}</h4>
+                </div>
+                <div class="col-10 text-center mt-4 align-self-center">
+                    <img width="100%" class="" src="{{ asset('uploads/images/' ~ article.picture) }}" title="{{ article.picture }}">
+                </div>
+                <div class="card-body container darkThemeLighter col-10 pb-0 mt-4 mb-4 carte">
+                    <p>{{ article.content }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{{ path('default') }}"><span class="btn btn-info border-0 rounded-circle m-1"><i class="far fa-arrow-alt-circle-left"></i></span></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

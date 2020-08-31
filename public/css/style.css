@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+body{
+    /*background: url("../assets/blue_font.jpeg");*/
+    background-color:#282832!important;
+}
+
+h4, h5, p, a, span, blockquote, ul, li, label, button, .btn, .blueDarktheme, .table td, .table th, .thead, .table thead, select, .form-control{
+    font-family: 'Baloo Tamma 2', serif!important;
+}
+
+.select, select, .form-control{
+    font-size:1rem!important;
+    padding:0.4rem!important;
+    letter-spacing: 0.1rem!important;
+}
+
+select:focus, .select:focus, #registration_form_secteur{
+    color:whitesmoke;
+    background: #282832;
+}
+
+.special{
+    font-family: 'Concert One'!important;
+    font-weight: bold;
+    background: darkviolet;
+    /*font-min-size: 1.6rem!important;*/
+}
+
+.table td, .table th{
+    color:lightblue!important;
+    border:none;
+    font-size: 0.9rem!important;
+}
+
+.button, .btn, button{
+    font-size:0.9rem!important;
+}
+
+label{
+    text-transform: uppercase;
+}
+
+.jumbo{
+    border-radius: 0!important;
+    background-image:url("../uploads/images/journal.jpeg")!important;
+    background-size: cover!important;
+    background-position: 10% 25%;
+    height:12rem;
+    opacity: 0.8;
+}
+
+.jumbotron h4{
+    font-family: "Concert One", serif !important;
+    font-size:2rem!important;
+}
+
+h4{
+    /*padding-top: 0.2rem!important;*/
+    letter-spacing: 0.1rem;
+    color:whitesmoke;
+    opacity: 0.8;
+    font-size: 1.1rem!important;
+}
+
+h5{
+    font-size:1rem!important;
+}
+
+p, li, cite, blockquote, label{
+    margin:0!important;
+    font-size: 1rem!important;
+    color:lightsteelblue!important;
+}
+
+.alert:hover, .alert-danger:hover{
+    background-color:#e8c7ca!important;
+    color:#483232!important;
+    border:1px solid #c8a7aa;
+}
+.alert, .alert-danger{
+    color:#927878!important;
+    border:1px solid #d8b7ba;
+}
+
+blockquote{
+    opacity: 0.8;
+}
+ul li{
+    list-style-type: none!important;
+    /*padding:1rem 0rem;*/
+    padding:0!important;
+
+}
+
+ul{
+    /*margin-left:0!important;*/
+    margin:0!important;
+    padding:0!important;
+}
+
+
+li:hover{
+    background:#444a50!important;
+    transition:0.4s;
+}
+
+.border{
+    border-width: 2px!important;
+}
+
+.blueDarktheme{
+    background:royalblue!important;
+    transition:0.6s;
+}
+
+.blueDarktheme:hover{
+    background:#2149c1!important;
+    transition:0.6s;
+}
+
+i:hover{
+
+}
+
+
+a{
+    color:whitesmoke!important;
+    font-size: 1rem;
+    transition:0.4s;
+}
+
+.animate__animated.animate__bounce {
+    --animate-duration: 1s;
+}
+
+
+.title{
+    /*border-radius:4px;*/
+    color:#18dfdf;
+}
+
+.darkTheme{
+    background: #202024;
+    color:whitesmoke;
+}
+
+.darkThemeAlt{
+    background: #262630;
+    color:whitesmoke;
+}
+
+.darkThemeLighter{
+    background:#303038;
+    color:whitesmoke;
+}
+
+.carte{
+    border:1px solid #363640;
+}
+
+.blueTheme{
+    background:#24a4e4;
+    border:none!important;
+    box-shadow: 0 0 0 inset!important;
+}
+
+.blueThemeWrite{
+    color:#34b4e4;
+}
+
+.whiteLightTheme{
+    background-color: #fdfdff!important;
+}
+
+.details{
+    min-height:46rem;
+}
+
+
+i{
+    line-height:1.6rem!important;
+    font-size: 1.1rem!important;
+}
+
+
+
+#connect{
+    font-size:1.6rem!important;
+    color:lightgray;
+}
+
+/*#linkedin{*/
+/*    font-size:1.4rem!important;*/
+/*    color:red!important;*/
+/*}*/
+
+.boutonAnimation{
+    padding:1rem;
+    border-bottom:1px solid #24a4e4!important;
+}
+
+.boutonAnimation:hover{
+    transition:0.4s;
+}
+
+.friseHor{
+    background-size:cover;
+    background-position:25% 15%;
+}
+
+.alert-danger, .alert{
+    list-style-type: none!important;
+    /*padding-left:0!important;*/
+    /*margin:0!important;*/
+}
+
+.alert-danger:hover, .alert:hover{
+    /*background-color:initial!important;*/
+}
+
+#add{
+    font-size:1.4rem!important;
+    color:whitesmoke;
+    transition:0.4s;
+}
+#add:hover{
+    color:white!important;
+    transition:0.4s;
+}
+
+#cursor{
+    cursor:auto;
+}
+#cursor i{
+    cursor:pointer;
+}
+
+input, textarea{
+    background:#242428!important;
+    color:silver!important;
+    border:1px solid #484852!important;
+}
+
+.formulaire{
+    margin:6rem auto!important;
+}
+
+.col{
+    padding:0;
+}

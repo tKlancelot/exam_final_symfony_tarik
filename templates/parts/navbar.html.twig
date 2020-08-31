@@ -1,0 +1,48 @@
+<div class="jumbo container col-8 carte mt-4 darkThemeAlt p-5">
+    <h4 class="text-uppercase lead text-light">journal local</h4>
+</div>
+
+    <nav class="nav darkThemeAlt carte container col-8 mt-4 text-light p-2">
+        {% if app.user %}
+        <div class="col d-flex justify-content-center align-self-center">
+            <span class="text-uppercase carte p-1">
+                    <p class="blueThemeWrite">espace de {{ app.user.firstname }}</p>
+            </span>
+        </div>
+        {% endif %}
+        {% if app.user is not null and 'ROLE_ADMIN' in app.user.roles %}
+            <a class="col d-flex justify-content-center align-self-center" title="database" href="{{ path('admin') }}">
+                <span class="btn btn-primary border-0 rounded"><i class="fas fa-users-cog"></i></span>
+            </a>
+        {% endif %}
+        <a class="col d-flex justify-content-center" title="home" href="{{ path('default') }}">
+            <span class="btn btn-light border-0 rounded"><i class="fas fa-home"></i></span>
+        </a>
+        {% if app.user is null %}
+
+        <a class="col d-flex justify-content-center" title="se connecter" href="{{ path('app_login') }}">
+            <span class="btn btn-success border-0 rounded"><i class="fas fa-sign-in-alt"></i></span>
+        </a>
+        {% endif %}
+        <div class="col d-flex justify-content-center">
+            <div class="btn border-0 rounded special pt-1 pl-3 pr-3 lead">{{ count }}</div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <span class="btn btn-warning border-0 rounded"><i class="fas fa-info-circle"></i></span>
+        </div>
+
+{#        j'inclus du contenu qui s'affichera si un utilisateur est connecté#}
+        {% if app.user %}
+        <a class="col d-flex justify-content-center" title="log out" href="{{ path('app_logout') }}">
+            <span class="btn btn-danger border-0 rounded"><i class="fas fa-sign-out-alt"></i></span>
+        </a>
+        <a class="col d-flex justify-content-center" title="ajouter un article" href="{{ path('add_article', {'userId': app.user.id})  }}">
+            <span class="btn btn-success border-0 rounded"><i class="fas fa-plus"></i></span>
+        </a>
+        {% endif %}
+        {% if app.user is not null and 'ROLE_ADMIN' in app.user.roles %}
+        <a class="col d-flex justify-content-center" title="ajouter un journaliste" href="{{ path('add_journalist')}}">
+            <span class="btn btn-secondary border-0 rounded"><i class="fas fa-plus"></i></span>
+        </a>
+        {% endif %}
+    </nav>

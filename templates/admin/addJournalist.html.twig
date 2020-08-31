@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ajouter un journaliste{% endblock %}
+
+{% block body %}
+    <div class="container col-8 mt-4">
+        <h4 class="d-flex"><i>{{ app.user.firstname | capitalize }}, tu t'apprêtes à ajouter un journaliste !</i></h4>
+    </div>
+    <div class="container formulaire col-8">
+        <div class="darkThemeAlt carte rounded p-4">
+            <h4 class="blueThemeWrite text-uppercase">ajouter un journaliste</h4>
+            <p>formulaire d'ajout journaliste</p>
+
+            {{ form_start(addUserForm) }}
+            {{ form_end(addUserForm, {'render_rest': true}) }}
+
+
+            <ul>
+                {% for error in addUserForm.vars.errors.form.getErrors(true) %}
+                    <li class="alert alert-danger mt-2 mb-2">{{ error.message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

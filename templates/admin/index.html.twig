@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container darkThemeAlt rounded col-8 carte mt-4">
+    <h4 class="p-2">{{ app.user.firstname }} {{ app.user.lastname }} ! </h4>
+    <table class="table">
+        <thead class="thead text-center">
+            <tr>
+                <th>#</th>
+                <th>nom</th>
+                <th>prénom</th>
+                <th class="text-left">email</th>
+                <th>options</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+        {% for item in users %}
+            {% if item.lastname != 'admin' %}
+            <tr class="carte">
+                <td>{{ item.id }}</td>
+                <td>{{ item.lastname }}</td>
+                <td>{{ item.firstname }}</td>
+                <td class="text-left">{{ item.email }}</td>
+                <td class="d-flex flex-row justify-content-center">
+                    <button type="button" class="col-2 mr-1 rounded-pill btn btn-secondary">
+                        <a class="text-white small" href="{{ path('edit_journalist', {'user': item.id}) }}">
+                            <i class="fas fa-pen-square"></i>
+                        </a>
+                    </button>
+                    <button type="button" class="col-2 mr-1 rounded-pill btn btn-danger">
+                        <a class="text-white small" href="{{ path('delete_journalist', {'user': item.id}) }}" onclick="return confirm('confirmer la suppression de ce journaliste ?')">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                    </button>
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

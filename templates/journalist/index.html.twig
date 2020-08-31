@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JournalistController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container col-6 carte mt-4">
+    <h4 class="d-flex align-self-center pt-2">Hello {{ app.user.firstname }}!</h4>
+</div>
+
+{% endblock %}

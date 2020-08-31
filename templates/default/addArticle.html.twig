@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ajouter un article{% endblock %}
+
+{% block body %}
+    <div class="container col-8 mt-4">
+        <h4 class="d-flex"><i>{{ app.user.firstname | capitalize }}, tu es sur le point d'ajouter un article !</i></h4>
+    </div>
+    <div class="container formulaire col-8">
+        <div class="darkThemeAlt carte rounded p-4">
+            <h4 class="blueThemeWrite text-uppercase">ajouter un article</h4>
+            <p>formulaire d'ajout d'article</p>
+
+            {{ form_start(addArticleForm) }}
+            {{ form_end(addArticleForm, {'render_rest': true}) }}
+            <ul>
+                {% for error in addArticleForm.vars.errors.form.getErrors(true) %}
+                    <li class="alert alert-danger mt-2 mb-2">{{ error.message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
