@@ -46,7 +46,6 @@ label{
     border-radius: 0!important;
     background-image:url("../uploads/images/journal.jpeg")!important;
     background-size: cover!important;
-    background-position: 10% 25%;
     height:12rem;
     opacity: 0.8;
 }
