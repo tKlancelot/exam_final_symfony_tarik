@@ -50,27 +50,21 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/default/addArticle/{userId}", name="add_article")
+     * @Route("/default/addArticle", name="add_article")
      * @param Request $request
-     * @param $userId
      * @param EntityManagerInterface $em
      * @param SluggerInterface $slugger
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function addArticle(Request $request, $userId, EntityManagerInterface $em, SluggerInterface $slugger)
+    public function addArticle(Request $request, EntityManagerInterface $em, SluggerInterface $slugger)
     {
-        $user = $this->getDoctrine()->getRepository(User::class)->find($userId);
-        $idUser = $user->getId();
-
         $article = new Articles();
         $count = $this->getDoctrine()->getRepository(Articles::class)->count([]);
         $newFilename = null;
         $form = $this->createForm(AddArticleFormType::class, new Articles());
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             $article->setTitre($form->get('titre')->getData());
-            $idJournalist = $article->getJournalist();
             $article->setContent($form->get('content')->getData());
             $uploadPicture = $form->get('picture')->getData();
 
@@ -102,6 +96,8 @@ class DefaultController extends AbstractController
         }
     }
 
+
+
     /**
      * @Route("/default/{id}", name="get_detail")
      * @param $id
@@ -118,5 +114,14 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/delete/{article}", name="delete_article")
+     */
+    public function deleteThis(Articles $article){
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($article);
+        $entityManager->flush();
+        return $this->redirectToRoute('default');
+    }
 
 }

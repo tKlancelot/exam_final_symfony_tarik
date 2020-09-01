@@ -97,20 +97,20 @@ class AdminController extends AbstractController
             ]);
         }
     }
-    /**
-     * @Route("/admin/{id}", name="get_journalist")
-     * @param $id
-     * @return Response
-     */
-    public function getOne($id)
-    {
-        $user = $this->getDoctrine()->getRepository(User::class)->find($id);
-        $count = $this->getDoctrine()->getRepository(User::class)->count([]);
-        return $this->render('admin/getJournalist.html.twig', [
-            'user' => $user,
-            'count'=>$count,
-        ]);
-    }
+//    /**
+//     * @Route("/admin/{id}", name="get_journalist")
+//     * @param $id
+//     * @return Response
+//     */
+//    public function getOne($id)
+//    {
+//        $user = $this->getDoctrine()->getRepository(User::class)->find($id);
+//        $count = $this->getDoctrine()->getRepository(User::class)->count([]);
+//        return $this->render('admin/getJournalist.html.twig', [
+//            'user' => $user,
+//            'count'=>$count,
+//        ]);
+//    }
 
     /**
      * @Route("/admin/{user}", name="delete_journalist")

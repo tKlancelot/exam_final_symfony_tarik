@@ -86,11 +86,11 @@ class Articles
         return $this->journalist;
     }
 
-
-
     public function setJournalist(?User $journalist): self
     {
         $this->journalist = $journalist;
         return $this;
     }
+
 }
+

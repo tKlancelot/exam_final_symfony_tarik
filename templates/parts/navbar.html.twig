@@ -36,7 +36,7 @@
         <a class="col d-flex justify-content-center" title="log out" href="{{ path('app_logout') }}">
             <span class="btn btn-danger border-0 rounded"><i class="fas fa-sign-out-alt"></i></span>
         </a>
-        <a class="col d-flex justify-content-center" title="ajouter un article" href="{{ path('add_article', {'userId': app.user.id})  }}">
+        <a class="col d-flex justify-content-center" title="ajouter un article" href="{{ path('add_article') }}">
             <span class="btn btn-success border-0 rounded"><i class="fas fa-plus"></i></span>
         </a>
         {% endif %}
